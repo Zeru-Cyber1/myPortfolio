@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zerubabel Titos- Portfolio</title>
+    <link rel="stylesheet" href="be.css" />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- <link rel="" href="zerusport.css" />-->
+    <style>
+    /* Reset */
+*{margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: Poppins,sans-serif;}
+h3{
+    text-align: center;
+    gap: 20px;
+    padding: 15px;
+    font-size: 35px;
+    border-radius: 10px;
+    border: none;
+}
+.para{
+   background: dimgrey;
+}
+.simple-footer{
+  text-align: center;
+  padding: 15px 0;
+  background: mediumaquamarine;
+  color: white;
+  font-size: 14px;
+  margin-top: 40px;
+}
+body{
+background:#0f0d0f;
+color: white;}
+/* Navbar */
+.navbar{
+    width: 100%;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+}
+.logo{
+    font-size: 27px;
+    font-weight: 700;
+    color:#fff;
+}
+.nav-links{
+    display: flex;
+    gap: 30px;
+}
+.nav-links li{
+    list-style: none;
+}
+.nav-links li a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+}
+.nav-links li a:hover, .nav-links li a.active{
+    color:#00eaff;
+}
+.nav-links li a i{
+    margin-right: 8px;
+    color:#00eaff;
+    font-size: 16px;
+    vertical-align: middle;
+}
+.nav-links li a:hover i, .nav-links li a.active i{
+    color: white;}
+.menu-icon{
+    display: none;
+    cursor: pointer;
+    font-size: 28px;
+    color:#00eaff;
+}
+/* Home Section */
+#home{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 10% 0 10%;
+}
+/* Horizontal menu above profile image */
+.home-menu{
+    display: flex;
+    justify-content: center;  
+    /* center horizontally */
+    gap: 30px;               
+    /* space between items */
+    margin-bottom: 20px;
+    flex-wrap: nowrap;       
+    /* never stack vertically */
+    flex-shrink: 0;
+    overflow-x: auto;
+    /* allow horizontal scroll if small screen */
+}
+.home-menu a{
+    text-decoration: none;
+    color:#00eaff;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+.home-menu a i{
+    margin-right: 8px;
+    font-size: 18px;
+    color:#ebba34;
+}
+.home-menu a:hover{
+    color: white;
+}
+.home-menu a:hover i{
+    color: white;
+}
+
+.profile-img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 4px solid #00eaff;
+}
+.home-content h1{
+    font-size: 50px;
+}
+.home-content h1 span{
+    color:#00eaff;
+}
+.home-content p{
+    margin: 15px 0;
+    opacity: 0.8;
+}
+/* Social Icons Centered */
+.social-icons{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;}
+.social-icons a{
+    text-decoration: none;
+    color:#00eaff;
+    font-weight: 600;
+    transition: 0.3s;}
+.social-icons a:hover{
+    color: white;}
+.btn{
+display: inline-block;
+padding: 12px 30px;
+background: orangered;
+border-radius: 5px;
+color: black;
+font-weight: 600;
+margin-top: 10px;
+transition: 0.3s;
+cursor: pointer;
+}
+.btn:hover{
+    background: white;
+}
+/* Sections */
+.section{
+    padding: 100px 10%;
+}
+h2{
+text-align: center;
+font-size: 40px;
+margin-bottom: 20px;
+}
+/* Reveal Animations */
+.reveal{
+opacity: 0;
+transform: translateY(40px);
+transition: 1s ease;
+}
+.reveal.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Skills */
+.skills-container{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+
+color: navajowhite;
+}
+.skill-card{
+    background:#1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1 1 80px;
+    text-align: center;
+border-left: 2px solid lightgreen;
+}
+.skill-card:hover{
+   transform: translateY(-7px);
+border-left: 4px solid #00eaff;
+}
+/* Projects */
+.project-card{
+    background:#1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 15px 0;
+    transition: 0.3s;
+border-left: 4px solid greenyellow;
+}
+.project-card:hover{
+    transform: translateY(-5px);
+border-left: 4px solid #00eaff;
+}
+/* Contact */
+form input,form textarea{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;}
+form button{
+    padding:12px 30px;
+    background:#00eaff;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+form button:hover{
+    background: white;}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px){
+  .nav-links{
+    flex-direction: column;
+    position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100vh;
+      width: 60%;
+      background:#0f0f0f;
+      gap: 50px;
+      padding-top: 100px;
+      transition: 0.3s;}
+  .nav-links.open{
+      right: 0;}
+  .menu-icon{
+      display: block;}
+  .skills-container, .project-card{
+      flex-direction: column;
+      align-items: center;
+  }
+  #home .home-content h1{
+      font-size: 35px;
+  }
+  #home .home-content p{
+      font-size: 16px;
+  }
+  .home-menu{
+      flex-wrap: nowrap;   
+      /* keep horizontal */
+      gap: 15px;            
+      overflow-x: auto;
+  }
+}
+    </style>
+</head>
+<body>
+    <!-- Navbar for mobile -->
+    <!-- Home Section -->
+
+    <section id="home" class="section home reveal">
+        <!-- Horizontal icons menu above profile image -->
+<div class="home-content"><img src="zeru.jpg" alt="Zerubabelpicture" class="profile-img" />
+ <h1>Hey, I'm <span>Zerubabel Titos</span></h1><p>Graphics Designer</p>
+ <div class="home-menu"> <a href="#about"><i class=""></i> About Me</a>
+ <a href="#skills"><i class=""></i>Skills</a>
+<a href="#projects"><i class=""></i> Projects</a>
+ <a href="#contact"><i class=""></i> Contact Me</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about reveal">
+        <h3>About Me</h3>
+        <p class="para">My name is Zerubabel Titos and I am a creative Graphic Designer with a strong passion for visual storytelling. I specialize in crafting modern, clean, and impactful designs that communicate ideas clearly and beautifully. I create logos, posters, social media content, branding materials, and UI elements with a focus on detail, consistency, and user experience.
+            </p>
+    </section>
+    <!-- Skills Section -->
+<section id="skills"class="section skills reveal">
+</section> 
+   <h2>Skills</h2>
+<div class="skills-container">
+ <div class="skill-card">Logo Design</div>
+ <div class="skill-card">Poster and Baner Design</div>
+ <div class="skill-card">Social Media Graphics</div>
+<div class="skill-card"> Motion Graphics</div>
+        <div class="skill-card">
+        UI/UX Visual Design</div>
+    <div class="skill-card">Adobe Photoshop</div>
+        </div>
+    </section>
+ <!-- Projects Section -->
+<section id="projects" class="section projects reveal">
+        <h2>Projects</h2>
+ <div class="project-card">Ad Banner Design</div>
+        <div class="project-card">Poster and Banner Design</div>
+        <div class="project-card">Social Media Marketing package</div>
+        <div class="project-card">Product Mockups or Business</div>
+    </section>
+    <h2>Contact Me Via</h2>
+    <div class="social-icons">
+          <a href="https://github.com/ZERU-cyber" target="_blank"
+            ><i class="fab fa-github"></i
+          ></a>
+ <a href="https://www.linkedin.com/in/zerubabel-titus-17934a335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"
+><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="https://www.facebook.com/zerubabel.titos" target="_blank"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="https://www.instagram.com/tituszerubabel?igsh=Y2Mwd3ZvOWg2dzht" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://www.tiktok.com/@zeru384?_r=1&_t=ZM-9215qfAvt8q" target="_blank"
+            ><i class="fab fa-tiktok"></i
+          ></a>
+        </div>
+    <!-- Contact Section -->
+    <section id="contact" class="section contact reveal">
+        <h2>Your Message</h2>
+        <form>
+ <input type="text" placeholder="Your Name" required />
+<input type="email" placeholder="Your Email" required />
+<textarea placeholder="Write Here" required></textarea><button type="submit">Send Messagee</button>
+        </form>
+    </section>
+    <!-- JS -->
+    
+    <!--<script src="zerusport.js"></script>-->
+    <footer class="simple-footer">
+  <p>© <span id="year"></span> Zerubabel Titos. All Rights Reserved.</p>
+</footer>
+    <script>
+    // Smooth scroll to sections
+function scrollToSection(id){
+    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+
+// Toggle mobile menu
+function toggleMenu(){
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('open');
+}
+
+// Scroll reveal animation
+const revealElements = document.querySelectorAll('.reveal');
+function reveal(){
+    revealElements.forEach(el=>{
+        const rect = el.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 50){
+            el.classList.add('active');
+        }
+    });
+}
+window.addEventListener('scroll', reveal);
+reveal();
+
+// Contact form submission
+const form = document.querySelector('form');
+if(form){
+    form.addEventListener('submit', function(e){
+        e.preventDefault();
+        alert('Message sent successfully!');
+    });
+}
+// Section scroll-spy for navbar
+document.addEventListener('scroll', ()=>{
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    let current = '';
+    sections.forEach(sec=>{
+        if(window.scrollY >= sec.offsetTop - 150){
+            current = sec.getAttribute('id');
+        }
+    });
+    navLinks.forEach(a=>{
+        a.classList.remove('active');
+        if(a.getAttribute('href') === '#'+current){
+            a.classList.add('active');
+        }
+    });
+});
+    </script>
+</body>
